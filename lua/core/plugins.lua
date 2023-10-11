@@ -33,7 +33,7 @@ return require('packer').startup(function(use)
   use "tpope/vim-obsession"
   use {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.0',
+    tag = '0.1.3',
     requires = {{ 'nvim-lua/plenary.nvim' }}
   }
   -- Automatically set up your configuration after cloning packer.nvim

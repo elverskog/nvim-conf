@@ -1,8 +1,22 @@
+-- local colors = {
+--   bg_dark = "#000000",
+--   bg = "#000000",
+--   grey = "#777777",
+--   white = "#ffffff",
+-- }
+
 local colors = {
-  bg_dark = "#000000",
-  bg = "#000000",
-  grey = "#777777",
-  white = "#ffffff",
+  bg            = '#1b1918',
+  bglight       = '#23211f',
+  fg            = '#898988',
+  fgactive      = '#b4bdc3',
+  water         = '#6099c0',
+  sky           = '#66a5ad',
+  wood          = '#b77e64',
+  blossom       = '#b279a7',
+  reed          = '#a7a264',
+  leaf          = '#a7a264',
+  rose          = '#de6e7c',
 }
 
 
@@ -36,11 +50,11 @@ require('lualine').setup {
         show_modified_status = true,
         mode = 0,
         max_length = vim.o.columns * 2 / 3,
-        -- use_mode_colors = false,
-        -- buffers_color = {
-        --   active = { bg = colors.bg, fg = colors.white },
-        --   inactive = { bg = colors.bg_dark, fg = colors.grey },
-        -- },
+        use_mode_colors = false,
+        buffers_color = {
+          active = { bg = colors.bglight, fg = colors.fgactive },
+          inactive = { bg = colors.bglight, fg = colors.fg },
+        },
         symbols = {
           modified = '●',
           alternate_file = '#',
@@ -48,25 +62,7 @@ require('lualine').setup {
         },
       }
     },
-    lualine_x = {
-      {
-        'encoding',
-        use_mode_colors = false,
-        encoding_color = {
-          active = { bg = colors.bg, fg = colors.white },
-          inactive = { bg = colors.bg_dark, fg = colors.grey },
-        },
-      },
-      {
-        'fileformat',
-        use_mode_colors = false,
-        fileformat_color = {
-          active = { bg = colors.bg, fg = colors.white },
-          inactive = { bg = colors.bg_dark, fg = colors.grey },
-        },
-      },
-      'filetype'
-    },
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
