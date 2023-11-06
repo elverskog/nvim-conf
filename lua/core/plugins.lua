@@ -34,10 +34,18 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.3',
-    requires = {{ 'nvim-lua/plenary.nvim' }}
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'BurntSushi/ripgrep'
+    }
   }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
+  use {
+      "nvim-telescope/telescope-file-browser.nvim",
+      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -64,7 +72,7 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
-
+  use 'stevearc/oil.nvim'
 
   if packer_bootstrap then
     require('packer').sync()

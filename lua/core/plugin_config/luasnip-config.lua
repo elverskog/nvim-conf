@@ -15,3 +15,33 @@ ls.config.set_config({
 		},
 	},
 })
+
+
+vim.keymap.set({ "i", "s" }, "<A-y>", "<Esc>o", { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<Tab>", function()
+	if ls.jumpable(1) then
+		ls.jump(1)
+	end
+end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+	if ls.jumpable(-1) then
+		ls.jump(-1)
+	end
+end, { silent = true })
+
+-- vim.keymap.set({ "i", "s" }, "<A-l>", function()
+-- 	if ls.choice_active() then
+-- 		ls.change_choice(1)
+-- 	else
+-- 		-- print current time
+-- 		local t = os.date("*t")
+-- 		local time = string.format("%02d:%02d:%02d", t.hour, t.min, t.sec)
+-- 		print(time)
+-- 	end
+-- end)
+-- vim.keymap.set({ "i", "s" }, "<A-h>", function()
+-- 	if ls.choice_active() then
+-- 		ls.change_choice(-1)
+-- 	end
+-- end) --}}}

@@ -18,3 +18,6 @@ vim.cmd [[ set noswapfile ]]
 
 --Line numbers
 vim.wo.number = true
+
+-- allow yank/paste across instances
+vim.opt.clipboard = "unnamedplus"
